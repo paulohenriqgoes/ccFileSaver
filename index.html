@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <title>AngularJS FileSaver Example</title>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="fileSaver.js"></script>
+</head>
+
+<body ng-controller="MyController">
+
+    <button ng-click="saveMyFile()">Save File</button>
+
+    <script>
+        // Define your AngularJS app
+        angular.module('myApp', [
+            'ccFileSaver'
+        ])
+            .controller('MyController', ['$scope', 'FileSaver', function ($scope, FileSaver) {
+                // Function to be called on button click
+                $scope.saveMyFile = function () {
+                    var myBlob = new Blob(['MyFile Text'], { type: 'text/text;charset=utf-8' });
+                    FileSaver.saveAs(myBlob, 'my-file.txt');
+                };
+            }]);
+    </script>
+
+</body>
+
+</html>
