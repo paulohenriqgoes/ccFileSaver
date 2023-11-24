@@ -7,7 +7,7 @@ An AngularJS service that implements simple saveAs to javascript Blob.
 ## Install
 
 ```
-bower install --save cc-file-saver
+bower install paulohenriqgoes/ccFileSaver#main --save
 ```
 
 ## Load It
